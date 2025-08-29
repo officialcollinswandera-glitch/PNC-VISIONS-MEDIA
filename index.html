@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNC Visions Media</title>
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons (WhatsApp, Email) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .section-padding {
+            padding: 80px 16px;
+        }
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .social-button {
+            transition: all 0.3s ease;
+        }
+        .social-button:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .loading-dots span {
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #161b22;
+            margin: 5% auto;
+            padding: 24px;
+            border-radius: 12px;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover, .close-button:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Parallax Hero Section Styles */
+        #hero-parallax {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* The background image has been updated here */
+            <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392315/IMG_8294f_ehsgti.jpg">
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            /* Opacity has been increased for better visibility */
+            opacity: 0.5;  
+        }
+    </style>
+</head>
+<body class="bg-[#0d1117]">
+
+  <!-- Header/Navigation -->
+<header class="relative sticky top-0 z-50 shadow-lg overflow-hidden">
+  <!-- Background Image Layer -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756391831/samples/landscapes/landscape-panorama.jpg" alt="Landscape Background" class="w-full h-full object-cover opacity-30">
+  </div>
+
+  <!-- Navigation Content -->
+  <nav class="relative z-10 container mx-auto px-4 py-4 flex justify-between items-center bg-[#161b22]/80 backdrop-blur-md rounded-b-lg">
+    <div class="flex items-center space-x-4">
+      <!-- PNC Visions Media Logo -->
+      <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392169/Screenshot_2025-08-28_083645_lxdsyx.png" class="h-12" alt="PNC Visions Media Logo">
+      <span class="text-xl font-bold hidden md:block text-white">PNC Visions Media</span>
+    </div>
+    <div class="space-x-2 md:space-x-6 text-sm md:text-base font-medium">
+      <a href="#home" class="text-gray-300 hover:text-white transition duration-300">Home</a>
+      <a href="#about" class="text-gray-300 hover:text-white transition duration-300">About Us</a>
+      <a href="#founders" class="text-gray-300 hover:text-white transition duration-300">Founders</a>
+      <a href="#services" class="text-gray-300 hover:text-white transition duration-300">Services</a>
+      <a href="#portfolio" class="text-gray-300 hover:text-white transition duration-300">Portfolio</a>
+      <a href="#testimonials" class="text-gray-300 hover:text-white transition duration-300">Testimonials</a>
+      <a href="#gallery" class="text-gray-300 hover:text-white transition duration-300">Gallery</a>
+      <a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a>
+      <a href="#inquiry" class="text-gray-300 hover:text-white transition duration-300">Inquiry</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+       <!-- Hero Section -->
+<section
+  id="home"
+  class="relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-center text-white px-4 md:px-8"
+  style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/dgwld54cz/image/upload/v1756392315/IMG_8294f_ehsgti.jpg');"
+>
+  <!-- Content -->
+  <div class="z-10 max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-7xl font-extrabold mb-4 leading-tight animate-fadeIn">PNC VISIONS MEDIA</h1>
+    <p class="text-xl md:text-3xl font-medium text-gray-200 mb-8 animate-fadeIn" style="animation-delay: 0.5s;">Connecting Perspectives, Empowering Change</p>
+    <div class="flex flex-col items-center space-y-4 animate-fadeIn" style="animation-delay: 1s;">
+      <a href="#services" class="bg-white text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:bg-gray-200">
+        Our Services
+      </a>
+      <a href="#contact" class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+        Get In Touch
+     
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+<section id="about" class="relative text-white py-16 overflow-hidden">
+  <!-- Background Image Layer -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756391830/samples/imagecon-group.jpg" alt="Imagecon Group Background" class="w-full h-full object-cover opacity-40">
+  </div>
+
+  <!-- Content Layer -->
+  <div class="relative z-10 container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Us</h2>
+    <div class="max-w-4xl mx-auto text-lg text-center text-gray-300 space-y-4 bg-[#0d1117]/80 p-6 rounded-xl shadow-lg">
+      <p>At PNC Visions Media, we believe in the power of visual storytelling to connect communities and inspire change. We are more than just a media company; we are a passionate team of creators, visionaries, and technical experts dedicated to helping you share your unique story with the world.</p>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Story</h2>
+      <p>PNC Visions Media was founded by two driven individuals, Collins Wandera and Peter Loishorua Kanko, who shared a common vision: to create a media company that goes beyond simple production. They wanted to build a platform that empowers voices, preserves moments, and turns ideas into powerful, tangible content. What began as a small venture with a big idea has grown into a comprehensive media solution provider, serving clients across various industries with professionalism and creativity.</p>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Mission</h2>
+<p>Our mission is to connect perspectives and empower positive change through innovative and high-quality media solutions. We strive to be the bridge that brings your message to life, ensuring it is seen, heard, and felt by your audience.<p>
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Philosophy</h2>
+<p>We are committed to excellence in every project. Our work is guided by three core values:
+
+Creativity: We approach every project with a fresh perspective, finding new and exciting ways to tell your story.
+
+Quality: From the initial concept to the final deliverable, we maintain the highest standards of quality in every photograph, video, and live stream.
+
+Professionalism: We are a reliable and trustworthy partner, dedicated to clear communication, timely delivery, and a seamless client experience.
+
+Whether you need to broadcast a major event, capture a personal milestone, or create a compelling brand identity, PNC Visions Media is here to turn your vision into a reality.<p>
+  
+
+                </div>
+            </div>
+        </section>
+ <!-- Founders Section -->
+<section id="founders" class="relative text-white section-padding overflow-hidden">
+  <!-- Background Image Layer -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 z-0" style="background-image: url('https://res.cloudinary.com/dgwld54cz/image/upload/v1756391837/samples/coffee.jpg');"></div>
+
+  <!-- Content Layer -->
+  <div class="container mx-auto px-4 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Meet the Founders</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Collins Wandera -->
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg flex flex-col items-center space-y-4">
+        <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392170/IMG_7371f_ni7qvr.jpg" alt="Collins Wandera" class="w-53 h-53 rounded-full object-cover border-4 border-gray-700">
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-white">Collins Wandera</h3>
+          <p class="text-purple-400 font-medium text-lg mb-2">Co-Founder & Director of Media Production</p>
+          <p class="text-gray-400">A visionary leader with a passion for creative storytelling. Collins oversees all media production, ensuring every project meets the highest standards of quality and innovation.</p>
+        </div>
+      </div>
+
+      <!-- Peter Loishorua Kanko -->
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg flex flex-col items-center space-y-4">
+        <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392169/WhatsApp_Image_2025-08-28_at_09.08.08_fosxam.jpg" alt="Peter Loishorua Kanko" class="w-53 h-53 rounded-full object-cover border-4 border-gray-700">
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-white">Peter Loishorua Kanko</h3>
+          <p class="text-purple-400 font-medium text-lg mb-2">Co-Founder & Technical Director</p>
+          <p class="text-gray-400">An expert in technical solutions, Peter ensures our operations run smoothly and efficiently. His expertise in live broadcasting and technology drives our ability to deliver seamless, high-quality content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+
+      <!-- Services Section -->
+<section id="services" class="relative text-white section-padding overflow-hidden">
+  <!-- Animated Gradient Background -->
+  <div class="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-purple-700 via-indigo-600 to-blue-600 opacity-30"></div>
+
+  <!-- Content Layer -->
+  <div class="container mx-auto px-4 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Service Cards -->
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Live Broadcasting</h3>
+        <p class="text-gray-400">Professional live broadcasting solutions for events, corporate meetings, and online content. We ensure a seamless, high-quality viewing experience.</p>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Photography & Videography</h3>
+        <p class="text-gray-400">Capturing life's most important moments with stunning visuals and creative storytelling. Perfect for events, portraits, and commercial needs.</p>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Camera Sales & Hires</h3>
+        <p class="text-gray-400">Offering a wide range of professional cameras and equipment for sale and hire to suit all your production requirements.</p>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Photo Printing</h3>
+        <p class="text-gray-400">High-quality photo printing services to bring your digital memories to life on various materials and finishes.</p>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Branding & Graphic Design</h3>
+        <p class="text-gray-400">Crafting compelling brand identities and unique graphic designs that resonate with your audience and tell your brand's story.</p>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Internet & Consultancy</h3>
+        <p class="text-gray-400">Providing expert advice and solutions for internet services, ensuring your business stays connected and efficient.</p>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+        <h3 class="text-xl md:text-2xl font-semibold mb-3">Podcasts</h3>
+        <p class="text-gray-400">Full-service podcast production, from recording and editing to distribution, to help you share your voice with the world.</p>
+      </div>
+    </div>
+
+    <!-- Service Idea Generator -->
+    <div class="mt-16 bg-[#161b22] p-8 rounded-xl shadow-lg text-center">
+      <h3 class="text-2xl font-semibold mb-4">✨ Service Idea Generator</h3>
+      <p class="text-gray-400 mb-6">Need inspiration? Use the Gemini AI to generate a new, creative service idea for our media company!</p>
+      <button id="generateIdeaBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+        Generate a New Idea ✨
+      </button>
+      <div id="loadingIndicator" class="mt-6 hidden">
+        <div class="flex justify-center items-center space-x-2 loading-dots">
+          <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+          <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+          <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+        </div>
+      </div>
+      <div id="ideaOutput" class="mt-6 text-left p-4 bg-[#0d1117] rounded-lg hidden">
+        <!-- Generated idea will be displayed here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gradient Animation CSS -->
+<style>
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+</style>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Portfolio Section -->
+<section id="portfolio" class="relative text-white py-16 overflow-hidden">
+  <!-- Video Background Layer -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-30">
+    <source src="https://res.cloudinary.com/dgwld54cz/video/upload/v1756391831/samples/elephants.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content Layer -->
+  <div class="relative z-10 container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Portfolio</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Project 1 -->
+      <div class="bg-[#0d1117]/80 rounded-xl shadow-lg overflow-hidden transition duration-300 hover-effect">
+        <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392169/WhatsApp_Image_2025-08-28_at_09.01.03_akxalh.jpg" alt="Corporate Event Live Stream" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Corporate Event Live Stream</h3>
+          <p class="text-gray-300">Seamlessly broadcasted a major corporate summit to a global audience with crystal-clear video and audio.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-[#0d1117]/80 rounded-xl shadow-lg overflow-hidden transition duration-300 hover-effect">
+        <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392172/worship_flyer_template_-_Made_with_PosterMyWall_p5kqh1.jpg" alt="Brand Identity & Design" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Brand Identity & Design</h3>
+          <p class="text-gray-300">Developed a fresh, modern brand identity and graphic design materials for a startup in the tech industry.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-[#0d1117]/80 rounded-xl shadow-lg overflow-hidden transition duration-300 hover-effect">
+        <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756392171/IMG_8708f_yz3lvd.jpg" alt="Photography" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Photography</h3>
+          <p class="text-gray-300">Connecting Perspectives was a comprehensive photography project that successfully documented a series of corporate events, professional portraits, and brand campaigns.</p>
+        </div>
+      </div>
+
+      <!-- AI Generated Project -->
+      <div class="bg-[#0d1117]/80 rounded-xl shadow-lg overflow-hidden transition duration-300 hover-effect">
+        <div class="w-full h-48 bg-gray-800 flex items-center justify-center p-4">
+          <img id="generatedImage" src="https://placehold.co/600x400/161B22/FFFFFF?text=AI+Generated+Image" alt="AI Generated Portfolio Image" class="w-full h-full object-cover rounded-md">
+        </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">Generate a New Project Idea</h3>
+          <p class="text-gray-300 mb-4 text-sm">Create a new portfolio image with AI. Describe the scene below!</p>
+          <input type="text" id="imagePrompt" placeholder="e.g., A photo of a drone filming a concert" class="w-full p-2 text-sm rounded-md bg-[#161b22] border border-gray-700 focus:outline-none focus:ring-1 focus:ring-purple-500 transition duration-300 mb-3 text-white">
+          <button id="generateImageBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300">
+            Generate Image 🎨
+          </button>
+          <div id="imageLoading" class="mt-4 hidden">
+            <div class="flex justify-center items-center space-x-2 loading-dots">
+              <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+              <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+              <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+           
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="bg-[#0d1117] text-white section-padding">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Testimonial Card Template -->
+                    <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+                        <p class="text-lg text-gray-300 italic mb-4">"PNC Visions Media transformed our Church's branding. Their graphic design work was innovative and truly captured our vision."</p>
+                        <p class="text-right font-semibold text-gray-500">- Bsp. Paul Kurraru, Bishop, DCMI Western Region</p>
+                    </div>
+                    <div class="bg-[#161b22] p-8 rounded-xl shadow-lg transition duration-300 hover-effect">
+                        <p class="text-lg text-gray-300 italic mb-4">"The live broadcasting service was flawless. Our global conference was a huge success, thanks to their technical expertise and professionalism."</p>
+                        <p class="text-right font-semibold text-gray-500">- David Teeka, Iloongam Family Chairman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="contact" class="relative text-white py-16 overflow-hidden">
+  <!-- Background Image Layer -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756391830/samples/animals/three-dogs.jpg" alt="Background Dogs" class="w-full h-full object-cover opacity-30">
+  </div>
+
+  <!-- Content Layer -->
+  <div class="relative z-10 container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
+    <div class="max-w-xl mx-auto space-y-8">
+      
+      <!-- Social Buttons -->
+      <div class="bg-[#0d1117]/80 p-8 rounded-xl shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4">Connect with Us</h3>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+          <a href="https://wa.me/254745855500" target="_blank" rel="noopener noreferrer" class="social-button w-full md:w-auto flex items-center justify-center space-x-2 bg-[#25d366] text-white font-bold py-3 px-6 rounded-full shadow-md">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span>WhatsApp Us</span>
+          </a>
+          <a href="mailto:officialcollinswandera@gmail.com" class="social-button w-full md:w-auto flex items-center justify-center space-x-2 bg-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-md">
+            <i class="fas fa-envelope text-xl"></i>
+            <span>Send an Email</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="bg-[#0d1117]/80 p-8 rounded-xl shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4">Contact Details</h3>
+        <div class="space-y-4 text-gray-300">
+          <p><strong>Phone 1:</strong> <a href="tel:+254745855500" class="text-blue-400 hover:underline">+254745855500</a></p>
+          <p><strong>Phone 2:</strong> <a href="tel:+254746826040" class="text-blue-400 hover:underline">+254746826040</a></p>
+          <p><strong>Email 1:</strong> <a href="mailto:officialcollinswandera@gmail.com" class="text-blue-400 hover:underline">officialcollinswandera@gmail.com</a></p>
+          <p><strong>Email 2:</strong> <a href="mailto:peterloishoruakanko@gmail.com" class="text-blue-400 hover:underline">peterloishoruakanko@gmail.com</a></p>
+        </div>
+      </div>
+
+      <!-- YouTube Channel -->
+      <div class="bg-[#0d1117]/80 p-8 rounded-xl shadow-lg text-center">
+        <h3 class="text-2xl font-semibold mb-4">Our YouTube Channel</h3>
+        <p class="text-gray-300 mb-4">Check out our TV station on YouTube:</p>
+        <a href="https://www.youtube.com/channel/UCxBN_qYXFn6m8LmVXaPgExg" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+          Visit YouTube Channel
+       
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Gallery Section -->
+<section id="gallery" class="relative text-white py-16 overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 z-0"
+       style="background-image: url('https://res.cloudinary.com/dgwld54cz/image/upload/v1756443909/pexels-umkreisel-app-956999_vpduub.jpg');"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 text-brand-main dark:text-brand-accent">
+      Our Media Projects
+    </h2>
+    <p class="text-center text-gray-200 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
+      Explore our visual storytelling. Click a project to preview all its images.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <!-- Project Card -->
+      <figure tabindex="0" class="group relative rounded-2xl overflow-hidden shadow bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow focus-within:ring-4 focus-within:ring-brand-main">
+        <img
+          src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756445680/DSC_0901ILO_mgssxq.jpg"
+          alt="Iloongam Family Prayers"
+          loading="lazy"
+          class="object-cover object-center w-full h-56 group-hover:scale-105 transition-transform duration-300" />
+        <button type="button" class="absolute inset-0 z-10 w-full h-full focus:outline-none" onclick="openModal(0)">
+          <span class="sr-only">Preview full project</span>
+        </button>
+        <figcaption class="relative z-20 p-5 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+          <h3 class="text-white text-xl font-semibold mb-1">Iloongam Family Prayers</h3>
+          <p class="text-gray-100 text-sm">Nyonyori_Ole Saitaga • 2025</p>
+        </figcaption>
+      </figure>
+<!-- Project 1: Solem'I Kainos Crusade Ep3 -->
+<figure tabindex="0" class="group relative rounded-2xl overflow-hidden shadow bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow focus-within:ring-4 focus-within:ring-brand-main">
+  <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756468310/IMG_8500f_sun7ik.jpg" alt="Solem'I Kainos Crusade Ep3" loading="lazy"
+    class="object-cover object-center w-full h-56 group-hover:scale-105 transition-transform duration-300" />
+  <button type="button" class="absolute inset-0 z-10 w-full h-full focus:outline-none" onclick="openModal(0)">
+    <span class="sr-only">Preview full project</span>
+  </button>
+  <figcaption class="relative z-20 p-5 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+    <h3 class="text-white text-xl font-semibold mb-1">Solem'I Kainos Crusade Ep3</h3>
+    <p class="text-gray-100 text-sm">Ilngarooj • 2025</p>
+  </figcaption>
+</figure>
+
+<!-- Project 2: Maa Festival -->
+<figure tabindex="0" class="group relative rounded-2xl overflow-hidden shadow bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow focus-within:ring-4 focus-within:ring-brand-main">
+  <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756468549/IMG_7708f_r06imj.jpg" alt="Maa Festival" loading="lazy"
+    class="object-cover object-center w-full h-56 group-hover:scale-105 transition-transform duration-300" />
+  <button type="button" class="absolute inset-0 z-10 w-full h-full focus:outline-none" onclick="openModal(1)">
+    <span class="sr-only">Preview full project</span>
+  </button>
+  <figcaption class="relative z-20 p-5 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+    <h3 class="text-white text-xl font-semibold mb-1">Maa Festival</h3>
+    <p class="text-gray-100 text-sm">Canivore Grounds • 2025</p>
+  </figcaption>
+</figure>
+
+<!-- Project 3: Samuel's Wedding -->
+<figure tabindex="0" class="group relative rounded-2xl overflow-hidden shadow bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow focus-within:ring-4 focus-within:ring-brand-main">
+  <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756468565/IMG_7533f_ynjeba.jpg" alt="Samuel's Wedding" loading="lazy"
+    class="object-cover object-center w-full h-56 group-hover:scale-105 transition-transform duration-300" />
+  <button type="button" class="absolute inset-0 z-10 w-full h-full focus:outline-none" onclick="openModal(2)">
+    <span class="sr-only">Preview full project</span>
+  </button>
+  <figcaption class="relative z-20 p-5 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+    <h3 class="text-white text-xl font-semibold mb-1">Samuel's Wedding</h3>
+    <p class="text-gray-100 text-sm">Kimuka • 2025</p>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="gallery-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 hidden" role="dialog" aria-modal="true">
+    <div class="relative bg-white dark:bg-gray-900 rounded-2xl max-w-3xl w-11/12 mx-auto shadow-2xl overflow-hidden">
+      <!-- Close Button -->
+      <button type="button" aria-label="Close preview" class="absolute top-4 right-4 bg-black/60 hover:bg-brand-main text-white rounded-full p-2 focus:outline-none" onclick="closeModal()">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Image Carousel -->
+      <div class="relative">
+        <img id="modal-image" src="" alt="" class="object-contain w-full h-96 bg-gray-200 dark:bg-gray-700 transition-all duration-300" />
+        <!-- Navigation -->
+        <button onclick="prevImage()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-brand-main cursor-pointer">
+          ‹
+        </button>
+        <button onclick="nextImage()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-brand-main cursor-pointer">
+          ›
+        </button>
+      </div>
+
+      <!-- Caption -->
+      <div class="p-6 text-center">
+        <h3 id="modal-title" class="text-2xl font-bold mb-2 text-brand-main dark:text-brand-accent"></h3>
+        <p id="modal-desc" class="text-gray-700 dark:text-gray-200 text-base mb-2"></p>
+        <div class="text-sm text-gray-500 dark:text-gray-400">
+          Image <span id="image-counter"></span> of <span id="image-total"></span>
+        </div>
+      </div>
+    </div>
+    <!-- Click outside to close -->
+    <div onclick="closeModal()" class="absolute inset-0 z-40" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- Tailwind Theme -->
+<style type="text/tailwindcss">
+  @theme {
+    --color-brand-main: #2348e8;
+    --color-brand-accent: #ffc233;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  const projects = [
+    {
+      title: 'Iloongam Family Prayers',
+      images: [
+        'https://res.cloudinary.com/dgwld54cz/image/upload/v1756445680/DSC_0901ILO_mgssxq.jpg',
+        'https://res.cloudinary.com/dgwld54cz/image/upload/v1756446531/DSC_0891ILO_foveo8.jpg',
+        'https://res.cloudinary.com/dgwld54cz/image/upload/v1756446530/DSC_0731ILO_xfsd9q.jpg',
+        'https://res.cloudinary.com/dgwld54cz/image/upload/v1756446536/DSC_0817ILO_qxqdra.jpg',
+        'https://res.cloudinary.com/dgwld54cz/image/upload/v1756446532/DSC_0697ILO_t2n3w4.jpg'
+      ],
+      alt: 'Iloongam Family Prayers',
+      desc: 'Nyonyori_Ole Saitaga • 2025. A high-level live streaming and Photography offered.'
+    }
+  ];
+
+  let currentProject = null;
+  let currentImageIndex = 0;
+
+  function openModal(idx) {
+    currentProject = projects[idx];
+    currentImageIndex = 0;
+    updateModal();
+    document.getElementById('gallery-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleEscClose);
+  }
+
+  function closeModal() {
+    document.getElementById('gallery-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleEscClose);
+  }
+
+  function updateModal() {
+    const img = document.getElementById('modal-image');
+    img.src = currentProject.images[currentImageIndex];
+    img.alt = currentProject.alt;
+    document.getElementById('modal-title').innerText = currentProject.title;
+    document.getElementById('modal-desc').innerText = currentProject.desc;
+    document.getElementById('image-counter').innerText = currentImageIndex + 1;
+    document.getElementById('image-total').innerText = currentProject.images.length;
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+    updateModal();
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+    updateModal();
+  }
+
+  function handleEscClose(e) {
+    if (e.key === 'Escape') closeModal();
+  }
+</script>
+
+
+ </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inquiry Form Section -->
+<section id="inquiry" class="relative text-white py-16 overflow-hidden">
+  <!-- Video Background Layer -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-30">
+    <source src="https://res.cloudinary.com/dgwld54cz/video/upload/v1756391831/samples/sea-turtle.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content Layer -->
+  <div class="relative z-10 container mx-auto px-4 max-w-2xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Make an Inquiry</h2>
+    <p class="text-center text-gray-300 mb-8">Fill out the form below and we'll get back to you as soon as possible! ✨ (Auto-drafted replies will be shown on submit!)</p>
+    
+    <form id="inquiryForm" class="space-y-6">
+      <div>
+        <label for="name" class="block text-lg font-medium mb-2">Name</label>
+        <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-[#161b22] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+      </div>
+      <div>
+        <label for="email" class="block text-lg font-medium mb-2">Email</label>
+        <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg bg-[#161b22] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+      </div>
+      <div>
+        <label for="subject" class="block text-lg font-medium mb-2">Subject</label>
+        <input type="text" id="subject" name="_subject" required class="w-full p-3 rounded-lg bg-[#161b22] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+      </div>
+      <div>
+        <label for="message" class="block text-lg font-medium mb-2">Message</label>
+        <textarea id="message" name="message" rows="6" required class="w-full p-3 rounded-lg bg-[#161b22] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+          Send Inquiry ✨
+        </button>
+      </div>
+      <div id="inquiryLoading" class="hidden mt-6 flex justify-center items-center space-x-2 loading-dots">
+        <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+        <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+        <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+      </div>
+    </form>
+  </div>
+</section>
+
+       <!-- Fun Fact Section (NEW) -->
+<section id="fun-fact" class="relative text-white py-16 overflow-hidden">
+  <!-- Background Image Layer -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://res.cloudinary.com/dgwld54cz/image/upload/v1756391836/samples/balloons.jpg" alt="Balloons Background" class="w-full h-full object-cover opacity-40">
+  </div>
+
+  <!-- Content Layer -->
+  <div class="relative z-10 container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Did You Know?</h2>
+    <div class="max-w-xl mx-auto p-8 rounded-xl shadow-lg bg-[#0d1117]/80">
+      <p class="text-gray-300 text-lg mb-6">Learn something new about media and broadcasting!</p>
+      <button id="generateFactBtn" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+        Get a Fun Fact! 💡
+      </button>
+      <div id="factLoading" class="mt-6 hidden">
+        <div class="flex justify-center items-center space-x-2 loading-dots">
+          <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+          <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+          <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+        </div>
+      </div>
+      <div id="factOutput" class="mt-6 p-4 text-left border-l-4 border-yellow-500 bg-[#161b22]/80 rounded-lg hidden">
+        <!-- Fun fact will be displayed here -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal for Auto-Drafted Reply -->
+<div id="replyModal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+  <div class="modal-content relative bg-[#0d1117]/90 backdrop-blur-md p-8 rounded-xl shadow-xl max-w-lg w-full text-white"
+       style="background-image: url('https://res.cloudinary.com/dgwld54cz/image/upload/v1756391836/samples/balloons.jpg'); background-size: cover; background-position: center;">
+    <span class="close-button absolute top-4 right-4 text-white text-2xl cursor-pointer" onclick="closeModal()">&times;</span>
+    <h3 class="text-2xl font-semibold mb-4">✨ Auto-Drafted Reply</h3>
+    <div id="replyBody" class="text-gray-200 whitespace-pre-wrap"></div>
+    <p class="mt-4 text-sm text-gray-300 italic">This is a Gemini AI generated draft. You can copy and paste this to your email client to send.</p>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d1117] py-6 text-center text-gray-500 text-sm">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2024 PNC Visions Media. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for API integrations and interactions -->
+    <script>
+        // Use an empty string for the API key; Canvas will provide it at runtime.
+        const TEXT_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=`;
+        const IMAGE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=`;
+
+        const serviceIdeas = [
+            'Live Broadcasting',
+            'Photography & Videography',
+            'Camera Sales & Hires',
+            'Photo Printing',
+            'Branding & Graphic Design',
+            'Internet & Consultancy',
+            'Podcasts'
+        ];
+
+        // --- Helper function for making API calls with exponential backoff ---
+        async function fetchWithRetry(url, options, retries = 3) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url + (API_KEY || ''), options);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    if (i < retries - 1) {
+                        const delay = Math.pow(2, i) * 1000;
+                        console.log(`Retrying in ${delay}ms...`);
+                        await new Promise(res => setTimeout(res, delay));
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+        }
+
+        // --- Parallax Effect for Hero Section ---
+        const heroParallax = document.getElementById('hero-parallax');
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            heroParallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+        });
+
+        // --- Service Idea Generator ---
+        document.getElementById('generateIdeaBtn').addEventListener('click', async () => {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const ideaOutput = document.getElementById('ideaOutput');
+
+            loadingIndicator.classList.remove('hidden');
+            ideaOutput.classList.add('hidden');
+            ideaOutput.innerHTML = '';
+
+            const prompt = `Based on the following media company services: ${serviceIdeas.join(', ')}. Generate a single, creative, and professional new service idea. The output should be a single paragraph, starting with a bolded title like "**Title:**" followed by a short description. Do not use markdown other than for the bolded title.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const response = await fetchWithRetry(TEXT_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const generatedText = response.candidates[0].content.parts[0].text;
+                ideaOutput.innerHTML = `<p>${generatedText}</p>`;
+                ideaOutput.classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error generating service idea:', error);
+                ideaOutput.innerHTML = `<p class="text-red-400">Failed to generate an idea. Please try again later.</p>`;
+                ideaOutput.classList.remove('hidden');
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+        
+        // --- Image Generator for Portfolio ---
+        document.getElementById('generateImageBtn').addEventListener('click', async () => {
+            const imagePrompt = document.getElementById('imagePrompt').value;
+            const imageLoading = document.getElementById('imageLoading');
+            const generatedImage = document.getElementById('generatedImage');
+
+            if (!imagePrompt) {
+                alert('Please enter a description for the image.');
+                return;
+            }
+
+            imageLoading.classList.remove('hidden');
+            generatedImage.src = "https://placehold.co/600x400/161B22/FFFFFF?text=Generating...";
+            
+            const payload = {
+                instances: [{ prompt: imagePrompt }],
+                parameters: { "sampleCount": 1 }
+            };
+
+            try {
+                const response = await fetchWithRetry(IMAGE_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const base64Data = response.predictions?.[0]?.bytesBase64Encoded;
+                if (base64Data) {
+                    const imageUrl = `data:image/png;base64,${base64Data}`;
+                    generatedImage.src = imageUrl;
+                } else {
+                    generatedImage.src = "https://placehold.co/600x400/161B22/FFFFFF?text=Generation+Failed";
+                }
+
+            } catch (error) {
+                console.error('Error generating image:', error);
+                generatedImage.src = "https://placehold.co/600x400/161B22/FFFFFF?text=Generation+Failed";
+            } finally {
+                imageLoading.classList.add('hidden');
+            }
+        });
+
+        // --- Inquiry Auto-Drafter ---
+        const form = document.getElementById('inquiryForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const inquiryLoading = document.getElementById('inquiryLoading');
+            inquiryLoading.classList.remove('hidden');
+
+            const prompt = `Draft a professional and polite email reply for a business inquiry.
+The inquiry is from a person named "${name}" with the email "${email}".
+The subject of the inquiry is: "${subject}".
+The message body is: "${message}".
+
+The drafted reply should acknowledge their message, thank them for their interest, and state that a team member will get back to them shortly. Do not include a subject line.
+The draft should start with "Dear [User Name]," and end with "Best regards, PNC Visions Media".
+Keep it concise and professional.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const response = await fetchWithRetry(TEXT_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const generatedText = response.candidates[0].content.parts[0].text;
+                document.getElementById('replyBody').innerHTML = generatedText.replace(/\[User Name\]/g, name);
+                document.getElementById('replyModal').style.display = "block";
+                form.reset(); // Reset the form fields
+
+            } catch (error) {
+                console.error('Error drafting reply:', error);
+                document.getElementById('replyBody').innerHTML = `<p class="text-red-400">Sorry, we couldn't draft a reply right now. Please try again later.</p>`;
+                document.getElementById('replyModal').style.display = "block";
+            } finally {
+                inquiryLoading.classList.add('hidden');
+            }
+        });
+
+        // --- Fun Fact Generator ---
+        document.getElementById('generateFactBtn').addEventListener('click', async () => {
+            const factLoading = document.getElementById('factLoading');
+            const factOutput = document.getElementById('factOutput');
+            
+            factLoading.classList.remove('hidden');
+            factOutput.classList.add('hidden');
+            factOutput.innerHTML = '';
+            
+            const prompt = `Provide a single, very short, and interesting fun fact about media, broadcasting, or video production.`;
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+            
+            try {
+                const response = await fetchWithRetry(TEXT_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const generatedText = response.candidates[0].content.parts[0].text;
+                factOutput.innerHTML = `<p>${generatedText}</p>`;
+                factOutput.classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error generating fun fact:', error);
+                factOutput.innerHTML = `<p class="text-red-400">Failed to get a fun fact. Please try again later.</p>`;
+                factOutput.classList.remove('hidden');
+            } finally {
+                factLoading.classList.add('hidden');
+            }
+        });
+
+        function closeModal() {
+            document.getElementById('replyModal').style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
